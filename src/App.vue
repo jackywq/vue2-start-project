@@ -6,6 +6,7 @@
         <a-tab-pane key="vueXState" tab="vuex" />
         <a-tab-pane key="vueRoute" tab="vue-router" />
         <a-tab-pane key="executeOrder" tab="vue2父子组件执行顺序" />
+        <a-tab-pane key="eventBus" tab="eventBus通信" />
       </a-tabs>
     </div>
     <!-- 组件和路径的一种映射，路由的出口，不加router-view页面无法跳转显示 -->
@@ -16,17 +17,17 @@
 <script lang="javascript">
 export default {
   name: 'App',
-  data: function() {
+  data: function () {
     return {
       curKey: 'home'
     };
   },
-  created () {
+  created() {
     const { path } = this.$route;
     this.curKey = path.slice(1);
   },
   methods: {
-    handleTabsClick (value) {
+    handleTabsClick(value) {
       this.$router.push(`/${value}`)
     }
   },
